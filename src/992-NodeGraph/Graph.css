@@ -1,0 +1,27 @@
+/* src/Graph.css */
+.node {
+  cursor: pointer;
+}
+
+.link {
+  fill: none;
+  stroke: #ccc;
+  stroke-width: 2px;
+}
+.graph {
+  display: flex;
+}
+.svg {
+  width: 80%;
+}
+.panel {
+  width: 20%;
+  background-color: azure;
+  text-align: center;
+}
+.panelItem {
+  margin-top: 2px;
+  background-color: black;
+  outline-color: white;
+  width: 250px;
+}

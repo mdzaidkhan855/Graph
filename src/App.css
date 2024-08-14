@@ -1,0 +1,41 @@
+.root {
+  margin: 0;
+}
+
+.demoList {
+  /* position: fixed; */
+  top: 0;
+  left: 0;
+  width: 500px;
+  /* border: 2px solid blueviolet; */
+  display: flex;
+  /* flex-direction: row; */
+  /* z-index: 1000; */
+  /* margin-bottom: 20px; */
+  margin: auto 20px;
+  height: 40px;
+}
+.demoTitle {
+  margin-right: 10px;
+  margin-left: 20px;
+}
+
+select option {
+  height: 30px; /* Set the height for each option (optional) */
+  background-color: azure;
+  list-style: circle;
+  font-size: medium;
+  color: brown;
+  font-weight: bold;
+}
+
+select {
+  overflow-y: auto; /* Enable vertical scrolling */
+  max-height: 50px; /* Set the maximum height of the dropdown */
+  width: 200px;
+}
+
+.content {
+  padding-top: 10px; /* Adjust based on header height to prevent overlap */
+  margin-left: 20px;
+}
