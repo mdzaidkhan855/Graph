@@ -9,6 +9,8 @@ export default function Panel({ leafLabel }) {
       <input className="panelItem" type="text" placeholder="input from ORM" />
       <br />
       <input className="panelItem" type="text" placeholder="input from ORM" />
+      <br />
+      <input className="panelItem" type="text" placeholder="input from ORM" />
     </div>
   );
 }
