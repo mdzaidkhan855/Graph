@@ -1,0 +1,40 @@
+
+form {
+    display: flex;
+    flex-direction: column; /* Stack form elements vertically */
+}
+h2 {
+    text-align: left;
+}
+
+/* input[type="checkbox"],
+input[type="radio"], */
+textarea {
+    width: 100%;        /* Make inputs and textareas take full width of their container */
+    padding: 0.5rem;    /* Add padding inside the input/textarea */
+    border: 1px solid #ccc; /* Add a border */
+    border-radius: 4px; /* Rounded corners */
+}
+
+.radio{
+    display: flex;
+    justify-content: flex-start;
+    /* text-align: left; */
+    /* margin-left: 10px; */
+    border: 2px solid red;
+    padding-left: 20px;
+}
+.radioItem{
+    margin-left: 5px;
+    margin-right: 5px;
+    border: 2px solid yellow;
+}
+
+.checkbox{
+    margin-left: 5px;
+    margin-right: 5px;
+    padding-left: 20px;
+}
+.checkboxItem{
+    display: flex;
+}

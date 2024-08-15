@@ -12,7 +12,7 @@ const Graph = ({ nodes, links, interlinks }) => {
 
   const width = window.innerWidth;
   const height = window.innerHeight;
-  console.log('width:height:', width);
+  console.log('width:height:', width + ":" + height);
 
   useEffect(() => {
     const svg = d3.select('svg').attr('width', width).attr('height', height);
@@ -150,13 +150,6 @@ const Graph = ({ nodes, links, interlinks }) => {
 
       // Toggle visibility
       const isVisible = childNodes.select('circle').attr('opacity') === '1';
-
-      // if (d.group === 3) setOpenInput(true);
-      // for (let i = 0; i < childNodes.length; i++) {
-      //   if (childNodes[i].gtoup === 2) {
-      //     childNodes[i].on('click', handleLeafClick);
-      //   }
-      // }
 
       childNodes.select('circle').attr('opacity', isVisible ? 0 : 1);
       childNodes.select('text').attr('opacity', isVisible ? 0 : 1);
