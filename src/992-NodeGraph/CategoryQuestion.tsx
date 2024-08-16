@@ -2,33 +2,7 @@ import React, { useState } from 'react';
 import QuestionForm from './QuestionForm';
 import Accordion from './Accordion';
 import ProgressBar from './ProgressBar';
-// interface AccordionItemProps {
-//   title: string;
-//   content: React.ReactNode;
-// }
 
-// const AccordionItem: React.FC<AccordionItemProps> = ({ title, content }) => {
-//   const [isOpen, setIsOpen] = useState(false);
-
-//   return (
-//     <div className="border-b border-gray-200">
-//       <button
-//         onClick={() => setIsOpen(!isOpen)}
-//         className="w-full px-4 py-2 text-left text-gray-800 bg-gray-100 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-//       >
-//         <span className="font-semibold">{title}</span>
-//         <span className={`float-right transform transition-transform ${isOpen ? 'rotate-180' : 'rotate-0'}`}>
-//           ▼
-//         </span>
-//       </button>
-//       {isOpen && (
-//         <div className="px-4 py-2 bg-gray-50">
-//           {content}
-//         </div>
-//       )}
-//     </div>
-//   );
-// };
 
 const CategoryQuestion = () => {    
 
@@ -54,9 +28,13 @@ const CategoryQuestion = () => {
     
   return (
     <>
-            <div className='flex'>
-                <h2 className='ml-4 mr-2'>Quetionaire</h2>
-                <span className='w-40'><ProgressBar percentage="50" /></span>
+            <div >
+                <h3>complete % 50</h3>
+                <div className='flex'>
+                    <h2 className='mr-4 font-bold'>Questionaire</h2>
+                    <ProgressBar percentage="50" />
+                </div>
+                
             </div>
             <div className="max-w-md mx-auto mt-10" >
                 <Accordion items={accordionItems} />
