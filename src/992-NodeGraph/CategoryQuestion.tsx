@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import QuestionForm from './QuestionForm';
 import Accordion from './Accordion';
+import ProgressBar from './ProgressBar';
 // interface AccordionItemProps {
 //   title: string;
 //   content: React.ReactNode;
@@ -53,8 +54,9 @@ const CategoryQuestion = () => {
     
   return (
     <>
-            <div>
-                <h2 className='ml-4'>Quetionaire</h2>
+            <div className='flex'>
+                <h2 className='ml-4 mr-2'>Quetionaire</h2>
+                <span className='w-40'><ProgressBar percentage="50" /></span>
             </div>
             <div className="max-w-md mx-auto mt-10" >
                 <Accordion items={accordionItems} />
