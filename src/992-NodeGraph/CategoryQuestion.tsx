@@ -29,9 +29,9 @@ const CategoryQuestion = () => {
   return (
     <>
             <div >
-                <h3>complete % 50</h3>
+                <h3 className=' pl-8'>50% complete</h3>
                 <div className='flex'>
-                    <h2 className='mr-4 font-bold'>Questionaire</h2>
+                    <h2 className='mr-4 font-bold ml-2'>Questionaire</h2>
                     <ProgressBar percentage="50" />
                 </div>
                 
