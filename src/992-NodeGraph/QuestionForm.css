@@ -21,13 +21,13 @@ textarea {
     justify-content: flex-start;
     /* text-align: left; */
     /* margin-left: 10px; */
-    border: 2px solid red;
+    /* border: 2px solid red; */
     padding-left: 20px;
 }
 .radioItem{
     margin-left: 5px;
     margin-right: 5px;
-    border: 2px solid yellow;
+    /* border: 2px solid yellow; */
 }
 
 .checkbox{

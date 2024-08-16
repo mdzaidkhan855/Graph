@@ -5,13 +5,17 @@ import './Graph.css'; // For custom styles
 import { useState } from 'react';
 import Panel from './Panel.tsx';
 
+
 const Graph = ({ nodes, links, interlinks }) => {
   //  const [openInput, setOpenInput] = useState(false);
   const [leafLabel, setLeafLabel] = useState('');
   //const svgRef = useRef(null);
 
-  const width = window.innerWidth;
-  const height = window.innerHeight;
+  // const width = window.innerWidth;
+  // const height = window.innerHeight;
+
+  const width = 1300;
+  const height = 700;
   console.log('width:height:', width + ":" + height);
 
   useEffect(() => {
@@ -219,7 +223,7 @@ const Graph = ({ nodes, links, interlinks }) => {
       d.fy = null;
     }
   }, []);
-
+ 
   return (
     <div className="graph">
       <div className="svg">
@@ -234,4 +238,4 @@ const Graph = ({ nodes, links, interlinks }) => {
   );
 };
 
-export default Graph;
+export default Graph; 
