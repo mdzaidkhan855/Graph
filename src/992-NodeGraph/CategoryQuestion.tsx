@@ -24,12 +24,10 @@ const CategoryQuestion = () => {
                 <div className='flex'>
                     <h2 className='mr-4 font-bold ml-2'>Questionaire</h2>
                     <ProgressBar percentage={percentage} />
-                </div>
-                
+                </div>                
             </div>
             <div className="max-w-md mx-auto mt-10" >
-                <Accordion setPercentage={setPercentage}/>
-                
+                <Accordion setPercentage={setPercentage}/>             
                 
             </div>
     </>
