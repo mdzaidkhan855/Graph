@@ -1,43 +1,34 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import QuestionForm from './QuestionForm';
 import Accordion from './Accordion';
 import ProgressBar from './ProgressBar';
 
 
-const CategoryQuestion = () => {    
+const CategoryQuestion = () => {
 
-    const accordionItems = [
-        {
-            title:"Question Category 1",
-            content:<QuestionForm/>,
-        },
-        {
-            title:"Question Category 2",
-            content:<QuestionForm/>,
-        },
-        {
-            title:"Question Category 3",
-            content:<QuestionForm/>,
-        },
-        {
-            title:"Question Category 4",
-            content:<QuestionForm/>,
-        },
-       
-      ];
+    const [percentage, setPercentage] = useState(0)
+
+    
+    // let percentageFilled = 100 * (noFormSubmitted/ 5)
+
+    // function formFilled(){
+
+    //     setNoFormSubmitted((noFormSubmitted)=> noFormSubmitted + 1)
+    // }
+
     
   return (
     <>
             <div >
-                <h3 className=' pl-8'>50% complete</h3>
+                <h3 className=' pl-8'>{percentage}% complete</h3>
                 <div className='flex'>
                     <h2 className='mr-4 font-bold ml-2'>Questionaire</h2>
-                    <ProgressBar percentage="50" />
+                    <ProgressBar percentage={percentage} />
                 </div>
                 
             </div>
             <div className="max-w-md mx-auto mt-10" >
-                <Accordion items={accordionItems} />
+                <Accordion setPercentage={setPercentage}/>
                 
                 
             </div>
