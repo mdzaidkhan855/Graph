@@ -144,4 +144,4 @@ function QuestionForm({formData, setFormData}){
     )
 }
 
-export default React.memo(QuestionForm);
+export default QuestionForm;

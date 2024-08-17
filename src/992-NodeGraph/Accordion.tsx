@@ -41,10 +41,10 @@ const AccordionItem = ({ id,title, content, isOpen, onClick, formItemSaved }) =>
 
     useEffect(()=>{
 
-        console.log(" form data: " , formData)
+        //console.log(" form data: " , formData)
         if(isFormComplete())
         {
-            console.log("Data enterd: " ,[id])
+            //console.log("Data enterd: " ,[id])
             formItemSaved([id], true)
         }else{
             formItemSaved([id], false)
@@ -95,15 +95,28 @@ const items = [
         content:<QuestionForm />,
     },
     {
+        id:3,
         title:"Question Category 3",
         content:<QuestionForm />,
     },
     {
+        id:4,
         title:"Question Category 4",
         content:<QuestionForm />,
     },
     {
+        id:5,
         title:"Question Category 5",
+        content:<QuestionForm />,
+    },
+    {
+        id:6,
+        title:"Question Category 6",
+        content:<QuestionForm />,
+    },
+    {
+        id:7,
+        title:"Question Category 7",
         content:<QuestionForm />,
     },
    
@@ -120,7 +133,7 @@ const Accordion = ({setPercentage}) => {
   };
 
   function formItemSaved(key, value){
-    console.log("incrementCounter called")
+    // console.log("incrementCounter called")
      
     setFormItems((prevData) => ({
         ...prevData,
@@ -129,10 +142,10 @@ const Accordion = ({setPercentage}) => {
     
   }
   useEffect(()=>{
-    console.log("Total form submitted : " ,formItemSaved)
+    console.log("Total form submitted : " ,formItems)
     // Calculate the total number of true values
     let no = Object.values(formItems).filter(value => value === true).length
-    let percentageFilled = 100 * (no/ items.length)
+    let percentageFilled = Math.floor(100 * (no/ items.length))
     setPercentage(percentageFilled );
   
   },[formItems])
@@ -169,4 +182,4 @@ const Accordion = ({setPercentage}) => {
   );
 };
 
-export default React.memo(Accordion);
+export default Accordion;
