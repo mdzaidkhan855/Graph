@@ -2,6 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { ChevronDownIcon, ChevronUpIcon } from '@heroicons/react/24/solid';
 import QuestionForm from './QuestionForm';
 import CircularProgress from './CircularProgress';
+import Toaster from './Toaster';
+
+
+
 const AccordionItem = ({ id,title, content, isOpen, onClick, formItemSaved }) => {
 
     const [formData, setFormData] = useState({ 
@@ -113,16 +117,14 @@ const items = [
         id:6,
         title:"Question Category 6",
         content:<QuestionForm />,
-    },
-    {
-        id:7,
-        title:"Question Category 7",
-        content:<QuestionForm />,
-    },
+    }
    
   ];
 
 const Accordion = ({setPercentage}) => {
+
+  const[isFormSubmitted, setIsFormSubmitted] = useState(false)
+  const[isFormSaved, setIsFormSaved] = useState(false)
 
   const [formItems, setFormItems] = useState({});
 
@@ -148,7 +150,15 @@ const Accordion = ({setPercentage}) => {
     let percentageFilled = Math.floor(100 * (no/ items.length))
     setPercentage(percentageFilled );
   
-  },[formItems])
+  },[formItems]);
+
+  function formSubmit(){
+    setIsFormSubmitted(true)
+  }
+
+  function formSave(){
+    setIsFormSaved(true)
+  }
 
   return (
     <>
@@ -167,12 +177,14 @@ const Accordion = ({setPercentage}) => {
         </div>
         <div className='flex space-x-14'>
             <div className='flex justify-center items-center h-20 ml-2'>
-                <button className='bg-white-500 text-black rounded hover:bg-gray-600 hover:text-white py-2 px-4'>Save</button>
+                <button onClick={formSave} className='bg-white-500 text-black rounded hover:bg-gray-600 hover:text-white py-2 px-4'>Save</button>
+                {isFormSaved && <Toaster message="Form saved succefully"/>}
             </div>
 
             <div className='flex justify-center items-center space-x-2'>
                 <button className='bg-white-500 text-black rounded hover:bg-gray-600 hover:text-white py-2 px-4'>Cancel</button>
-                <button className="bg-white-500 text-black rounded hover:bg-gray-600 hover:text-white py-2 px-4">Submit</button>
+                <button onClick={formSubmit} className="bg-white-500 text-black rounded hover:bg-gray-600 hover:text-white py-2 px-4">Submit</button>
+                {isFormSubmitted && <Toaster message="Form submitted succefully"/>}
             </div>
             
 
