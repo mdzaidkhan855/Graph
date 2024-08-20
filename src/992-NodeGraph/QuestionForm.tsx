@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import './QuestionForm.css';
 
-function QuestionForm({formData, setFormData}){
+function QuestionForm({formData, setFormData, searchQuery}){
     
     // Handle changes for radio buttons
   const handleRadioChange = (event) => {
@@ -67,18 +67,23 @@ function QuestionForm({formData, setFormData}){
     //     }
         
     // },[textAreaValue,checkedItems])
+    const highlightText = (text) => {
+      if (!searchQuery) return text;
 
+      const regex = new RegExp(`(${searchQuery})`, 'gi');
+      return text.replace(regex, '<mark>$1</mark>');
+   };
     return(
         <div>
             <form  action="">
             
                 <div className="firstSection">
-                    <h2 >01. Lorenipsum1</h2>
-                    <textarea name="textArea" id="" cols="30" rows="10" 
+                    <h2 >01. <p  dangerouslySetInnerHTML={{ __html: highlightText("Lorem ipsum dolor sit amet, consectetur adipiscing elit.") }}></p></h2>
+                    <textarea name="textArea" id="" cols="30" rows="5" 
                            value={formData.textArea} placeholder="enter details" onChange={textAreaOnChange}/>
                 </div>
                 <div>
-                    <h2>02. Lorenipsum</h2>
+                    <h2>02. <p  dangerouslySetInnerHTML={{ __html: highlightText("Lorem ipsum dolor sit amet, consectetur adipiscing elit.") }}></p></h2>
                     <div className='radio'>
                         <div className='radioItem'>
                             <input type="radio" id="yes" 
@@ -104,7 +109,7 @@ function QuestionForm({formData, setFormData}){
                     
                 </div>
                 <div>
-                    <h2>03. Lorenipsum</h2>
+                    <h2>03. <p  dangerouslySetInnerHTML={{ __html: highlightText("Lorem ipsum dolor sit amet, consectetur adipiscing elit.") }}></p></h2>
                     <div className='checkbox'>
                         <div className='checkboxItem'>
                             <input type="checkbox" 

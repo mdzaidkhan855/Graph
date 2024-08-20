@@ -6,7 +6,7 @@ function Toaster({message}){
 
     const notify = () => {
         toast.success(message, {
-          position: 'bottom-right',
+          position: 'top-right',
           autoClose: 5000, // Duration in milliseconds
           hideProgressBar: false,
           closeOnClick: true,
